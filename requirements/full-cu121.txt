@@ -1,0 +1,20 @@
+# Dependências da execução completa opcional em uma máquina com CUDA 12.1.
+# Instale este arquivo somente se o caminho completo com GPU for utilizado.
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.14.1
+scikit-learn==1.5.2
+scikit-image==0.24.0
+pyarrow==18.1.0
+Pillow==11.0.0
+matplotlib==3.9.2
+XlsxWriter==3.2.2
+PyYAML==6.0.2
+astropy==6.1.7
+opencv-python-headless==4.10.0.84
+kornia==0.7.4
+byol-pytorch==0.8.2
+astronomaly @ git+https://github.com/MichelleLochner/astronomaly.git@111cdd12d615fde12f2c09cadd7c3018e8fbeff8
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.5.1
+torchvision==0.20.1

@@ -1,0 +1,19 @@
+{
+  "features_shape": [
+    6161,
+    1280
+  ],
+  "pca_shape": [
+    6161,
+    30
+  ],
+  "pca_explained_variance": 0.9523180723190308,
+  "evaluation_sources": 1031,
+  "high_interest_sources": 86,
+  "labels_used": 100,
+  "recall_at_100": 43,
+  "recall_at_100_fraction_of_high_interest": 0.5,
+  "pca_variance": 0.95,
+  "ei_tradeoff": 3.0,
+  "seed": 42
+}

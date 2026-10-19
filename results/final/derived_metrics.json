@@ -1,0 +1,14 @@
+{
+  "evaluation_sources": 1031,
+  "high_interest_sources": 86,
+  "top_k": 100,
+  "true_positive": 43,
+  "false_positive": 57,
+  "false_negative": 43,
+  "true_negative": 888,
+  "recall_at_100": 43,
+  "recall_fraction": 0.5,
+  "precision_top100": 0.43,
+  "accuracy_top100": 0.9030067895247332,
+  "f1_top100": 0.4623655913978495
+}

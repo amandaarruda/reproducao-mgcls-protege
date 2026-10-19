@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+.DS_Store
+# large artefacts of a full rerun stay outside the repository
+byol_features.parquet
+byol_model.pt
+full-output/
+run-output/
+data/
+*.pt

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "Reprodução do Astronomaly Protege no MGCLS"
+message: "Se este repositório for utilizado, cite o paper de reprodução e o artigo original do Astronomaly Protege."
+type: software
+authors:
+  - family-names: Arruda
+    given-names: Amanda
+    affiliation: Universidade Federal de Pernambuco
+version: 0.1.0
+references:
+  - type: article
+    authors:
+      - family-names: Lochner
+        given-names: Michelle
+      - family-names: Rudnick
+        given-names: Lawrence
+    title: "Astronomaly Protege: Discovery Through Human-Machine Collaboration"
+    year: 2025
+    journal: The Astronomical Journal
+    volume: 169
+    issue: 3
+    doi: 10.3847/1538-3881/ada14c
