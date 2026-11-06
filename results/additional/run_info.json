@@ -1,0 +1,97 @@
+{
+  "input": "results/final (frozen catalogue, PCA features and evaluation labels)",
+  "byol_retrained": false,
+  "pca_refitted": false,
+  "evaluation_sources": 1031,
+  "high_interest_rule": "score >= 4",
+  "high_interest_sources": 86,
+  "fixed_label_budget": 100,
+  "software": {
+    "python": "3.10.12",
+    "scikit_learn": "1.3.2",
+    "numpy": "1.24.4",
+    "pandas": "2.0.3"
+  },
+  "parameters": {
+    "fixed_label_gp": {
+      "kernel": "Matern() + WhiteKernel()",
+      "tradeoff": 3.0,
+      "query_labels": 100
+    },
+    "pca_dimensions": [
+      5,
+      10,
+      20,
+      30
+    ],
+    "whitening": "divide each PCA-30 component by its population standard deviation over all sources; do not center",
+    "isolation_forest": {
+      "estimators": 200,
+      "random_state": 42,
+      "fit_sources": 6161
+    },
+    "active_replay": {
+      "dimensions": [
+        20,
+        30
+      ],
+      "epsilon": [
+        0,
+        3
+      ],
+      "batch_size": 10,
+      "labels_per_run": 100
+    },
+    "svm": {
+      "kernel": "RBF",
+      "class_weight": "balanced",
+      "C": [
+        0.1,
+        1,
+        10,
+        100
+      ],
+      "gamma": [
+        "scale",
+        0.01,
+        0.1,
+        1.0
+      ],
+      "cv_folds": 5,
+      "cv_scoring": "average_precision",
+      "cv_random_state": 42
+    }
+  },
+  "interpretation": "Exploratory comparisons on the supplied run; they do not replace the PROTEGE reproduction.",
+  "outputs": [
+    "active_replay_metrics.csv",
+    "figures/pca_ablation.pdf",
+    "figures/pca_ablation.png",
+    "figures/recovery_curves.pdf",
+    "figures/recovery_curves.png",
+    "figures/variance_recall.pdf",
+    "figures/variance_recall.png",
+    "pca_variance.csv",
+    "qualitative_cases_pca5.csv",
+    "ranking_isolation_forest_pca30.csv",
+    "ranking_pca_10.csv",
+    "ranking_pca_20.csv",
+    "ranking_pca_30.csv",
+    "ranking_pca_30_whitening.csv",
+    "ranking_pca_5.csv",
+    "ranking_replay_pca20_epsilon0.csv",
+    "ranking_replay_pca20_epsilon3.csv",
+    "ranking_replay_pca30_epsilon0.csv",
+    "ranking_replay_pca30_epsilon3.csv",
+    "ranking_svm_pca20.csv",
+    "ranking_svm_pca30.csv",
+    "representation_metrics.csv",
+    "svm_grid_pca20.csv",
+    "svm_grid_pca30.csv",
+    "svm_metrics.csv",
+    "trace_replay_pca20_epsilon0.csv",
+    "trace_replay_pca20_epsilon3.csv",
+    "trace_replay_pca30_epsilon0.csv",
+    "trace_replay_pca30_epsilon3.csv"
+  ]
+}

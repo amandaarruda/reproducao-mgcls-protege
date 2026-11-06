@@ -65,3 +65,24 @@ limite de 100 posições.
 Esta é uma reprodução procedural de uma execução de treinamento. São usados os
 recortes publicados, e não uma reconstrução a partir dos arquivos FITS brutos
 do MGCLS.
+
+## Análises adicionais
+
+As comparações posteriores usam as características PCA e os rótulos
+congelados em `results/final`. Não houve novo treinamento BYOL nem novo ajuste
+do PCA. Na ablação de representação, o processo gaussiano recebe os mesmos 100
+pares de fonte e nota da execução principal; são comparadas as primeiras 5,
+10, 20 e 30 componentes, além das 30 componentes com whitening. O Isolation
+Forest é ajustado sem rótulos às 6.161 representações PCA-30.
+
+O replay ativo complementar combina PCA-20 ou PCA-30 com `epsilon` 0 ou 3,
+usando 100 consultas por configuração. Diferentemente da ablação com rótulos
+fixos, cada replay escolhe suas próprias consultas conforme a melhoria
+esperada. O SVM RBF balanceado é um classificador auxiliar treinado com as 100
+notas fixas; `C` e `gamma` são escolhidos por validação cruzada estratificada
+de cinco partes, usando precisão média como critério.
+
+Execute `python experiments/run.py` para gerar os rankings, tabelas e
+checksums. O comando `python experiments/plot_results.py` gera figuras
+quantitativas a partir desses resultados. As análises são complementares e
+exploratórias: não alteram a reprodução principal.

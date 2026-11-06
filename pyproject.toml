@@ -18,6 +18,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+experiments = ["matplotlib>=3.8,<4"]
 
 [project.scripts]
 mgcls-protege = "mgcls_protege.cli:main"

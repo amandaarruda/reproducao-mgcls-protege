@@ -43,6 +43,25 @@ confusão e os escores, dentro da tolerância numérica, estão de acordo com o
 resultado fornecido. Pequenas diferenças de ponto flutuante são aceitáveis;
 equivalência não exige que todas as casas decimais sejam idênticas.
 
+### Análises adicionais
+
+O repositório também inclui as análises complementares da segunda etapa do
+trabalho. Elas usam os mesmos arquivos congelados, não treinam novamente o
+BYOL nem ajustam outro PCA, e não exigem imagens nem GPU:
+
+```bash
+python experiments/run.py
+python experiments/plot_results.py
+```
+
+As saídas são gravadas em `results/additional/`: comparação entre dimensões
+PCA, whitening, Isolation Forest, replay ativo com duas dimensões e dois valores
+de `epsilon`, e um SVM RBF auxiliar. O primeiro comando não sobrescreve uma
+pasta de saída existente; use `--output-dir /caminho/novo` para outra execução.
+Para gerar as figuras, instale `python -m pip install -e '.[experiments]'` e
+execute o segundo comando. Instruções e detalhes estão em
+[`experiments/README.md`](experiments/README.md).
+
 ### Reprodução completa
 
 O experimento completo pode ser executado a partir do catálogo e dos recortes
@@ -87,12 +106,14 @@ pytest -q
 ## Estrutura do repositório
 
 ```text
-mgcls_protege/   reprodução completa, replay do Protege e validações
-results/final/   resultados compactos da reprodução
-results/replay/  estado salvo após cada rodada de aprendizado ativo
-tests/           testes unitários e de regressão
-docs/            método e resultados
-requirements/    dependências opcionais da etapa com GPU
+mgcls_protege/        reprodução completa, replay do Protege e validações
+experiments/          análises complementares e geração de figuras
+results/final/        resultados compactos da reprodução principal
+results/replay/       estado salvo após cada rodada de aprendizado ativo
+results/additional/   tabelas e rankings das análises complementares
+tests/                testes unitários e de regressão
+docs/                 método e resultados
+requirements/         dependências opcionais da etapa com GPU
 ```
 
 O experimento completo treinou o BYOL em uma GPU NVIDIA A100 de 80 GB. Depois
